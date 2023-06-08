@@ -6,7 +6,7 @@ import {FaBars} from "react-icons/fa"
 function Navbar() {
     return (
         <nav className="bg-blue-500 p-4">
-            <div className="container mx-auto flex justify-between items-center">
+            <div className="container mx-auto flex justify-between items-center bg-">
                 {/*****************  Nav Brand********************/}
                 <div className="nav__brand">
                     <Link to="/">

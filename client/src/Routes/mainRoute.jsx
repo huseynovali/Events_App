@@ -14,7 +14,7 @@ export default function MainRoutes() {
             path: '/',
             children: [
                 {
-                    path: "home",
+                  index,
                     element: <Home />,
                 },
                 {

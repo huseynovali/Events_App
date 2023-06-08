@@ -51,7 +51,7 @@ const Home = () => {
           <CircularProgress />
         </div>
       ) : (
-        <div className="slide text-red-500">
+        <div className="slide text-red-500 ">
           <div className="button-container">
             <Button className="prev-btn" variant="contained" onClick={handlePrev}>
               <ArrowBackIosNew />

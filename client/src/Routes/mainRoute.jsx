@@ -3,8 +3,9 @@ import { Navigate } from "react-router-dom";
 import React from 'react'
 
 import MainLayout from "../Layout/MainLayout";
-import Home from "../page/Home";
+
 import AllEvents from "../page/AllEvents";
+import Home from "../page/Home/Home";
 
 export default function MainRoutes() {
     const isTrue = true

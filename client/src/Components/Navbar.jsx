@@ -10,7 +10,7 @@ function Navbar() {
                 {/*****************  Nav Brand********************/}
                 <div className="nav__brand">
                     <Link to="/">
-                        <div className="text-baby_Blue font-bold text-lg">Logo</div>
+                        <div className="text-baby_Blue font-bold text-lg">Logoa</div>
                     </Link>
                 </div>
                 <div className="nav__right flex justify-between items-center">

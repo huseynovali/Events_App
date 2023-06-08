@@ -4,6 +4,7 @@ import React from 'react'
 
 import MainLayout from "../Layout/MainLayout";
 import Home from "../page/Home";
+import AllEvents from "../page/AllEvents";
 
 export default function MainRoutes() {
     const isTrue = true
@@ -15,6 +16,10 @@ export default function MainRoutes() {
                 {
                     path: "home",
                     element: <Home />,
+                },
+                {
+                    path: "allevents",
+                    element: <AllEvents />
                 }
 
 

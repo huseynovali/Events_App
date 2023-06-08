@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { eventSlice } from './eventsReducer'
+import ticketReducer from "../store/ticketSlice"
+
 export const store = configureStore({
   reducer: {
-eventSlice
+    ticketReducer:ticketReducer,
     
   },
 })

@@ -3,6 +3,10 @@
   height: calc(100vh - 65px);
 }
 
+.navbar{
+  background: linear-gradient( #9198e5,#9c3599);
+  height: 80px;
+}
 .mySwiper img {
   width: 100%;
   height: auto;
@@ -30,6 +34,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(#9c3599, #9857d5);
+
 }
 
 .famous-events {
@@ -37,7 +43,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  transform: translateY(120px);
+  transform: translateY(180px);
+
 }
 
 .card {
@@ -104,24 +111,57 @@
 }
 
 .prev-btn {
-  transform: translateX(-100px);
+  transform: translateY(-90px);
 }
-
 .next-btn {
-  transform: translateX(100px);
+  transform: translateY(-90px);
+
 }
 
 .mt-8 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
-}
-.mt-8-first{
-  font-size: 24px;
-  font-weight: bold;
+  color:#aaeef9;
+  margin-left: 30px;
   transform: translateY(60px);
 
 }
+.mt-8-first{
+  font-size: 30px;
+  font-weight: bold;
+  transform: translateY(60px);
+  margin-left: 30px;
+  color:#aaeef9;
+  /* transform:translateX(20px) */
 
+}
+.famous{
+  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -46px;
+
+}
+.concerts{
+  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.museum{
+  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sport{
+  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.theatre{
+  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* Eklemeler */
 
 @media (max-width: 991px) {

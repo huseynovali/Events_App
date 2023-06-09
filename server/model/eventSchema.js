@@ -21,16 +21,13 @@ const eventSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    price: {
-        type: Number,
-        default: 0
-    },
     category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
     },
-    imageUrl: [String],
 
+    imageUrl: [String],
+ 
 });
 
 

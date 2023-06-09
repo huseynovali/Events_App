@@ -8,16 +8,29 @@ export const eventController = {
         const limit = req.query.limit || 10;
         Event.find()
             .populate("category")
-            .populate("location")
+            .populate({
+                path: "location",
+                select: "-seats"
+            })
             .then(data => {
-                const eventsWithImageUrl = data.map(event => ({
-                    ...event.toObject(),
-                    imageUrl: `http://localhost:5000/img/${event.imageUrl}` // Resim URL'sini oluşturun
-                }));
+                const eventsWithImageUrl = data.map(event => {
+                    let imageUrl = event.imageUrl;
+                    if (Array.isArray(imageUrl)) {
+                        imageUrl = imageUrl.map(fileName => `http://localhost:5000/img/${fileName}`);
+                    } else {
+                        imageUrl = `http://localhost:5000/img/${imageUrl}`;
+                    }
+
+                    return {
+                        ...event.toObject(),
+                        imageUrl: imageUrl // Resim URL'sini oluşturun
+                    };
+                });
                 res.json(eventsWithImageUrl);
             })
             .catch(err => res.status(500).json({ error: err.message }))
     },
+
 
     getByiD: (res) => {
         const id = req.params.id;
@@ -44,28 +57,26 @@ export const eventController = {
                 if (err) {
                     return res.status(500).json(err);
                 }
-
-                uploadedFiles.push(path);
-
+                uploadedFiles.push(fileName);
                 if (uploadedFiles.length === files.length) {
-                    const newLocation = new Event({
+                    const newEvent = new Event({
                         name: req.body.name,
                         description: req.body.description,
                         date: req.body.date,
                         location: req.body.location,
                         organizer: req.body.organizer,
-                        price: req.body.price,
                         category: req.body.category,
                         imageUrl: uploadedFiles,
                     });
 
-                    newLocation.save()
-                        .then(saveLocation => res.status(201).json(saveLocation))
+                    newEvent.save()
+                         .then((data)=>res.send(data))
                         .catch(err => res.status(500).json({ error: err.message }));
                 }
             });
         });
     }
+
 
     ,
     deleteEvent: (req, res) => {
@@ -73,8 +84,17 @@ export const eventController = {
         Event.findByIdAndDelete(id)
             .then((data) => {
                 const imageUrls = data.imageUrl;
+    
+                if (!Array.isArray(imageUrls)) {
+                    return res.send(`Event and associated images removed.`);
+                }
+    
+                const currentFilePath = fileURLToPath(import.meta.url);
+                const currentDirPath = dirname(currentFilePath);
+    
                 imageUrls.forEach(item => {
-                    fs.unlink(item, function (err) {
+                    const imagePath = join(currentDirPath, '..', 'img', item);
+                    fs.unlink(imagePath, function (err) {
                         if (err && err.code === 'ENOENT') {
                             console.info("File doesn't exist, won't remove it.");
                         } else if (err) {
@@ -82,10 +102,39 @@ export const eventController = {
                         }
                     });
                 });
-
+    
                 res.send(`Event and associated images removed.`);
             })
             .catch(err => res.status(500).json({ error: err.message }));
     }
+,    
+    
+    createReservation: (req, res) => {
+        const id = req.params.id;
+        const seatId = req.params.seatId;
+        Event.findById(id)
+            .then(event => {
+                if (!event) {
+                    return res.status(404).json({ error: "Etkinlik bulunamadı" });
+                }
+
+                const seat = event.location.seats.find(s => s._id.toString() === seatId);
+                if (!seat) {
+                    return res.status(404).json({ error: "Yer bulunamadı" });
+                }
+
+                if (seat.reserved) {
+                    return res.status(400).json({ error: "Yer zaten rezerve edilmiş" });
+                }
+
+                seat.reserved = true;
+
+                event.save()
+                    .then(savedEvent => res.status(201).json(savedEvent))
+                    .catch(err => res.status(500).json({ error: err.message }));
+            })
+            .catch(err => res.status(500).json({ error: err.message }));
+    }
+
 
 }

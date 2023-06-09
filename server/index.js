@@ -30,6 +30,6 @@ app.use('/category', categoryRouter)
 app.use('/events', eventsRouter)
 app.use("/img", express.static(join(__dirname, 'img')));
 
-app.listen(5000, () => console.log("listen..."))
+app.listen(5001, () => console.log("listen..."))
 
 

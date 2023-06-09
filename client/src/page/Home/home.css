@@ -1,103 +1,197 @@
-/* styles.css */
+.mySwiper {
+  width: 100%;
+  height: calc(100vh - 65px);
+}
 
+.mySwiper img {
+  width: 100%;
+  height: auto;
+  /* object-fit: contain; */
+}
+
+.mySwiper h3 {
+  color: #000;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.mySwiper h2 {
+  color: #ff0000;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.swiper-container {
+  padding: 20px;
+}
+
+.slide {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.famous-events {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(120px);
+}
+
+.card {
+  max-width: 400px;
+}
+
+.card-container {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 390px;
+  box-shadow: 0 0 10px black;
+  border-radius: 0 10px 10px 0;
+}
+
+.card-description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 390px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.412), rgba(0, 0, 0, 0.648));
+  transition: all 0.3s;
+  border-top-right-radius: 10px;
+}
+
+.card-description h1 {
+  font-size: 19px;
+  color: white;
+  margin-top: 90px;
+}
+
+.card-description p {
+  font-size: 16px;
+  color: rgb(213, 213, 213);
+}
+
+.card-description h3 {
+  color: var(--lighter);
+}
+
+.card-description:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.064));
+  color: transparent;
+}
+
+.check-out {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  text-align: center;
+  border-bottom-right-radius: 10px;
+  color: white;
+  transition: all 0.2s;
+}
+
+.check-out:hover {
+  background-color: var(--lighter);
+  font-size: 25px;
+}
+
+.prev-btn {
+  transform: translateX(-100px);
+}
+
+.next-btn {
+  transform: translateX(100px);
+}
+
+.mt-8 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.mt-8-first{
+  font-size: 24px;
+  font-weight: bold;
+  transform: translateY(60px);
+
+}
+
+/* Eklemeler */
+
+@media (max-width: 991px) {
   .mySwiper {
-      width: 100%;
-      /* height: 100%; */
-  
-    }
-    
-    .mySwiper img {
-      width: 100%;
-      height: auto;
-  
-    }
-    
-    .mySwiper h3 {
-      color: #000;
-      font-size: 18px;
-      margin-top: 10px;
-    }
-    
-    .mySwiper h2 {
-      color: #ff0000;
-      font-size: 20px;
-      margin-top: 5px;
-    }
-  .slide{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
   }
-  .famous-events{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+  .card {
+    max-width: 100%;
   }
-  
-  
-  
-  
-  .card{
-    max-width: 250px;
+
+  .card-container {
+    height: 450px;
   }
-  
-  .card-container{
-     position: relative;
-     background-size: cover;
-     background-position: center;
-     width: 100%;
-     height: 300px;
-     box-shadow: 0 0 10px black;
-     border-radius: 0 10px 10px 0;
-  
+
+  .card-description h1 {
+    font-size: 22px;
+    margin-top: 120px;
   }
-  
-  .card-description{
-     position: absolute;
-     top:0;
-     left: 0;
-     right: 0;
-     text-align: center;
-     height: 260px;
-     background-image: linear-gradient(rgba(0, 0, 0, 0.412), rgba(0, 0, 0, 0.648));
-     transition: all 0.3s;
-     border-top-right-radius: 10px;
+
+  .card-description p {
+    font-size: 18px;
   }
-  .card-description h1{
-     font-size: 19px;
-     color: white;
-     margin-top:90px ;
+}
+
+@media (max-width: 767px) {
+  .mySwiper {
+    width: 100%;
   }
-  .card-description p{
-     font-size: 16px;
-     color: rgb(213, 213, 213);
+
+  .card {
+    max-width: 100%;
   }
-  .card-description h3{
-     color: var(--lighter);
+
+  .card-container {
+    height: 480px;
   }
-  
-  .card-description:hover{
-     background-image: linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.064));
-     color: transparent;
+
+  .card-description h1 {
+    font-size: 26px;
+    margin-top: 140px;
   }
-  
-  
-  .check-out{
-     position: absolute;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     height: 40px;
-     background-color: orange;
-     text-align: center;
-     border-bottom-right-radius: 10px;
-     color: white;
-     transition: all 0.2s;
+
+  .card-description p {
+    font-size: 20px;
   }
-  
-  .check-out:hover{
-     background-color: var(--lighter);
-     font-size: 25px;
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .mySwiper {
+    width: 100%;
   }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card-container {
+    height: 390px;
+  }
+
+  .card-description h1 {
+    font-size: 19px;
+    margin-top: 90px;
+  }
+
+  .card-description p {
+    font-size: 16px;
+  }
+
+  .swiper-slide {
+    width: 50%;
+  }
+}

@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
-const FamousEvents = () => {
+const Concerts = () => {
   const { tickets } = useSelector((state) => state.ticketReducer);
   const swiperRef = useRef(null);
   const dispatch = useDispatch();
@@ -108,4 +108,4 @@ const FamousEvents = () => {
   );
 };
 
-export default FamousEvents;
+export default Concerts;

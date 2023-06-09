@@ -3,6 +3,8 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from "fs"
 import { v4 as uuidv4 } from "uuid"
+import moment from 'moment';
+
 export const eventController = {
     getAll: (req, res) => {
         const limit = req.query.limit || 10;
@@ -32,7 +34,7 @@ export const eventController = {
     },
 
 
-    getByiD: (res) => {
+    getByiD: (req, cdcres) => {
         const id = req.params.id;
         Event.findById(id)
             .then(data => res.json(data))
@@ -58,11 +60,17 @@ export const eventController = {
                     return res.status(500).json(err);
                 }
                 uploadedFiles.push(fileName);
+
+
+
+
                 if (uploadedFiles.length === files.length) {
+                    const dateStr = req.body.date;
+                    const formattedDate = moment(dateStr, 'DD.MM.YYYY HH:mm').utcOffset('+04:00').format();
                     const newEvent = new Event({
                         name: req.body.name,
                         description: req.body.description,
-                        date: req.body.date,
+                        date: formattedDate,
                         location: req.body.location,
                         organizer: req.body.organizer,
                         category: req.body.category,
@@ -70,14 +78,12 @@ export const eventController = {
                     });
 
                     newEvent.save()
-                         .then((data)=>res.send(data))
+                        .then((data) => res.send(data))
                         .catch(err => res.status(500).json({ error: err.message }));
                 }
             });
         });
     }
-
-
     ,
     deleteEvent: (req, res) => {
         const id = req.params.id;

@@ -7,7 +7,7 @@ function MainLayout() {
         <div>
            <Navbar/>
             <Outlet />
-            <footer className='w-screen h-[450px] bg-cerulean_Blue'>
+            <footer className='w-full h-[450px] bg-cerulean_Blue'>
 
             </footer>
         </div>

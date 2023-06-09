@@ -57,13 +57,9 @@ const Home = () => {
           <CircularProgress />
         </div>
       ) : (
-        <div className="slide">
-          {/* <div className="button-container">
-            <Button className="prev-btn" variant="contained" style={{width:"100px",height:"100px",borderRadius:"60px"}} onClick={handlePrev}>
-              <ArrowBackIosNewIcon />
 
-            </Button>
-          </div> */}
+        <div className="slide">
+
   
           <Swiper style={{width:"1000px"}}
             ref={swiperRef}

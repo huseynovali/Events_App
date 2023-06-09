@@ -51,7 +51,7 @@ const Home = () => {
   };
 
   return (
-    <Container fixed>
+    <>
       {loading ? (
         <div style={{ textAlign: "center" }}>
           <CircularProgress />
@@ -91,16 +91,31 @@ const Home = () => {
       )}
   
          <h1 className="mt-8-first">Populyar Tədbirlər</h1>
-      <FamousEvents/>
+         <div className="famous">
+         <FamousEvents/>
+         </div>
+
       <h1 className="mt-8">Konsertlər</h1>
+      <div className="concerts">
       <Concerts />
+      </div>
+
       <h1 className="mt-8">Tamaşa</h1>
+      <div className="theatre">
       <Theatre />
+      </div>
+
       <h1 className="mt-8">İdman</h1>
+      <div className="sport">
       <Sport />
+      </div>
+
       <h1 className="mt-8">Muzey</h1>
+      <div className="museum">
       <Museum />
-    </Container>
+
+      </div>
+      </>
   );
             }
 export default Home

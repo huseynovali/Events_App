@@ -5,12 +5,12 @@ import {BiUserCircle} from "react-icons/bi"
 import {FaBars} from "react-icons/fa"
 function Navbar() {
     return (
-        <nav className="bg-blue-500 p-4">
+        <nav className="navbar">
             <div className="container mx-auto flex justify-between items-center bg-">
                 {/*****************  Nav Brand********************/}
                 <div className="nav__brand">
                     <Link to="/">
-                        <div className="text-baby_Blue font-bold text-lg">Logoa</div>
+                        <div className="text-baby_Blue font-bold text-lg">EventTix</div>
                     </Link>
                 </div>
                 <div className="nav__right flex justify-between items-center">

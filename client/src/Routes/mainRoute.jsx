@@ -4,7 +4,7 @@ import React from 'react'
 
 import MainLayout from "../Layout/MainLayout";
 
-import AllEvents from "../page/AllEvents";
+import AllEvents from "../page/AllEvents/AllEvents";
 import Home from "../page/Home/Home";
 
 export default function MainRoutes() {

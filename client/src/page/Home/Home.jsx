@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper/core";
 import { useSelector, useDispatch } from "react-redux";
 import { CircularProgress, Container, Button } from "@mui/material";
@@ -14,8 +14,6 @@ import "./home.css";
 import Concerts from "../../Components/Concerts";
 import Sport from "../../Components/Sport";
 import Museum from "../../Components/Museum";
-
-
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -57,11 +55,9 @@ const Home = () => {
           <CircularProgress />
         </div>
       ) : (
-
         <div className="slide">
-
-  
-          <Swiper style={{width:"1000px"}}
+          <Swiper
+            style={{ width: "1000px" }}
             ref={swiperRef}
             autoplay={{
               delay: 2000,
@@ -71,51 +67,51 @@ const Home = () => {
             className="mySwiper"
           >
             {tickets.map((item, index) => (
-              <SwiperSlide  key={index}>
-                <img src={item.image} alt={item.title} />
-                <h3>{item.title}</h3>
-                <h2>{item.price}</h2>
+              <SwiperSlide className="swiperslide" key={index}>
+                <div
+                  className={'card-container-main'}
+                  key={index}
+                  style={{ backgroundImage: `url(${item.image})`,height:"900px",backgroundRepeat:"no-repeat",backgroundSize:"contain" }}
+                ></div>
+                {/* <h3>{item.title}</h3>
+                <h2>{item.price}</h2> */}
               </SwiperSlide>
             ))}
           </Swiper>
-  
+
           {/* <div>
             <Button variant="contained" className="next-btn" style={{width:"100px",height:"100px",borderRadius:"60px"}} onClick={handleNext}>
               <ArrowForwardIosIcon/>
             </Button>
           </div> */}
-        
-
-
         </div>
       )}
-  
-         <h1 className="mt-8-first">Populyar Tədbirlər</h1>
-         <div className="famous">
-         <FamousEvents/>
-         </div>
+
+      <h1 className="mt-8-first">Populyar Tədbirlər</h1>
+      <div className="famous">
+        <FamousEvents />
+      </div>
 
       <h1 className="mt-8">Konsertlər</h1>
       <div className="concerts">
-      <Concerts />
+        <Concerts />
       </div>
 
       <h1 className="mt-8">Tamaşa</h1>
       <div className="theatre">
-      <Theatre />
+        <Theatre />
       </div>
 
       <h1 className="mt-8">İdman</h1>
       <div className="sport">
-      <Sport />
+        <Sport />
       </div>
 
       <h1 className="mt-8">Muzey</h1>
       <div className="museum">
-      <Museum />
-
+        <Museum />
       </div>
-      </>
+    </>
   );
-            }
-export default Home
+};
+export default Home;

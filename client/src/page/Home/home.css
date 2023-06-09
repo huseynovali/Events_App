@@ -1,18 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 .mySwiper {
   width: 100%;
   height: calc(100vh - 65px);
 }
 
-.navbar{
-  background: linear-gradient( #9198e5,#9c3599);
+  .navbar{
   height: 80px;
+  width: 100%;
 }
+li{
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;}
 .mySwiper img {
   width: 100%;
   height: auto;
-  /* object-fit: contain; */
 }
-
+.logo{
+  height: 80px;
+}
 .mySwiper h3 {
   color: #000;
   font-size: 18px;
@@ -34,9 +41,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(#9c3599, #9857d5);
+margin-top: 20px;
+background: linear-gradient(to bottom, rgb(255,201,14), white);}  
 
-}
+
 
 .famous-events {
   display: flex;
@@ -50,6 +58,7 @@
 .card {
   max-width: 400px;
 }
+
 
 .card-container {
   position: relative;
@@ -122,48 +131,56 @@
   font-size: 30px;
   font-weight: bold;
   color:#aaeef9;
+  transform: translateY(140px);
   margin-left: 30px;
-  transform: translateY(60px);
+  color:#000000;
 
 }
 .mt-8-first{
   font-size: 30px;
   font-weight: bold;
-  transform: translateY(60px);
+  transform: translateY(250px);
   margin-left: 30px;
-  color:#aaeef9;
+  color:#000000;
   /* transform:translateX(20px) */
 
 }
 .famous{
-  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-image: url("../../img//vector2.png");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: -46px;
+  margin-top: 100px;
 
 }
 .concerts{
-  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-image: url("../../img//vector2.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .museum{
-  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-image: url("../../img//vector2.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .sport{
-  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-image: url("../../img//vector2.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .theatre{
-  background-image: url("../../img/—Pngtree—beautiful\ purple\ abstract\ background_8656058.png");
+  background-image: url("../../img//vector2.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* Eklemeler */
-
+ .back-btn{
+  color: black;
+ }
+ .forward-btn{
+  color: black;
+ }
+ .container{
+  min-width: 100%;
+ }
 @media (max-width: 991px) {
   .mySwiper {
     width: 100%;
@@ -176,7 +193,9 @@
   .card-container {
     height: 450px;
   }
-
+.card-description{
+  height: 450px;
+}
   .card-description h1 {
     font-size: 22px;
     margin-top: 120px;
@@ -185,6 +204,14 @@
   .card-description p {
     font-size: 18px;
   }
+  .navbar{
+    width: 100%;
+ 
+  }
+  .container{
+    min-width: 100%;
+   }
+   
 }
 
 @media (max-width: 767px) {
@@ -199,7 +226,9 @@
   .card-container {
     height: 480px;
   }
-
+.card-description{
+  height: 480px;
+}
   .card-description h1 {
     font-size: 26px;
     margin-top: 140px;
@@ -208,6 +237,9 @@
   .card-description p {
     font-size: 20px;
   }
+  .container{
+    min-width: 100%;
+   }
 }
 @media (min-width: 992px) and (max-width: 1279px) {
   .mySwiper {
@@ -234,4 +266,179 @@
   .swiper-slide {
     width: 50%;
   }
+  .container{
+    min-width: 100%;
+   }
+}
+
+#footer-top {
+  padding: 80px 0;
+  background-color: rgb(255,201,14);
+  color:#0d0d0d;
+  font-family: Montserrat;
+  text-align: center;
+  transform: translateY(100px);
+
+}
+#footer-top h4{
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+#footer-top p{
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 28px;
+
+}
+#footer-top .location ,
+#footer-top .icon{
+  margin-bottom: 35px;
+}
+#footer-top .icon a{
+color: #0d0d0d;
+text-decoration: none;
+border-radius: 50%;
+border: 2px solid #0d0d0d;
+font-size: 20px;
+padding: 10px;
+margin: 0 4px;
+}
+#footer-top .icon a:hover{
+  color: rgb(255,201,14);
+  background-color: #0d0d0d;
+}
+
+#footer-top .freelance a{
+  font-size: 18px;
+}
+
+#footer-bottom{
+  background-color: rgb(255,201,14);
+  color: #0d0d0d;
+  text-align: center;
+  padding: 30px;
+  font-family: Metropolis;
+  font-size: 13px;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+
+}
+
+
+.col-4 {
+  width: calc(100% / 3);
+}
+
+
+.col-12 {
+  width: 100%;
+}
+
+
+
+/* desktop responsive - xs */
+@media only screen and (max-width:575px) {
+  .container-xs {
+      width: 80%;
+      margin: 0 auto;
+  }
+  
+  .container-xs-fluid {
+      width: 100%;
+      padding: 0 15px;
+
+  }
+
+  .col-xs-4 {
+      width: calc(100% / 3);
+  }
+
+
+  .col-xs-12 {
+      width: 100%;
+  }
+
+}
+
+/* phone responsive - sm */
+@media only screen and (min-width:576px) {
+  .container-sm {
+      width: 80%;
+      margin: 0 auto;
+  }
+  
+  .container-sm-fluid {
+      width: 100%;
+      padding: 0 15px;
+
+  }
+
+  .col-sm-4 {
+      width: calc(100% / 3);
+  }
+
+  
+  .col-sm-12 {
+      width: 100%;
+  }
+
+}
+
+/* tablet responsive - md */
+@media only screen and (min-width:768px) {
+  .container-md {
+      width: 80%;
+      margin: 0 auto;
+  }
+  
+  .container-md-fluid {
+      width: 100%;
+      padding: 0 15px;
+
+  }
+
+
+  .col-md-4 {
+      width: calc(100% / 3);
+  }
+
+  .col-md-12 {
+      width: 100%;
+  }
+
+}
+
+/* desktop responsive - lg */
+@media only screen and (min-width:992px)  {
+  .container-lg {
+      width: 80%;
+      margin: 0 auto;
+  }
+
+  .container-lg-fluid {
+      width: 100%;
+      padding: 0 15px;
+
+  }
+
+
+  .col-lg-4 {
+      width: calc(100% / 3);
+  }
+
+  .col-lg-12 {
+      width: 100%;
+  }
+
 }

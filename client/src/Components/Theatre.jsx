@@ -7,6 +7,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "swiper/swiper.min.css";
 
+import "../page/Home/home.css";
 import { getTickets, nextTicket, prevTicket } from "../store/ticketSlice";
 import { Link } from "react-router-dom";
 
@@ -46,27 +47,38 @@ const Theatre = () => {
   return (
     <div className="famous-events">
       <div className="button-container">
-        <Button className="prev-btn" variant="contained" onClick={handlePrev}>
-          <ArrowBackIosNewIcon />
+        <Button className="prev-btn"  onClick={handlePrev}>
+            <ArrowBackIosNewIcon />
+            <ArrowBackIosNewIcon />
+
+<ArrowBackIosNewIcon />
         </Button>
       </div>
 
       <Swiper
-        ref={swiperRef}
-        slidesPerView={3}
-        spaceBetween={80}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        className="mySwiper"
-        style={{ padding: '30px 0' }}
-      >
+  ref={swiperRef}
+  slidesPerView={3}
+  spaceBetween={100}
+  autoplay={{
+    delay: 2000,
+    disableOnInteraction: false,
+  }}
+  loop={true}
+  navigation={true}
+  pagination={{
+    clickable: true,
+  }}
+  className="mySwiper"
+  style={{ padding: '30px 0' }}
+  breakpoints={{
+    320: {
+      slidesPerView: 1,
+    },
+    992: {
+      slidesPerView: 2,
+    },
+  }}
+>
         {tickets.map((item, index) => (
           <SwiperSlide key={index} className={`card`}>
           <div className={`card-container`} key={index} style={{backgroundImage: `url(${item.image})`}}>
@@ -76,8 +88,7 @@ const Theatre = () => {
               <h3>{item.price}$</h3>
             </div>
             
-            
-            <Link className='check-out' to={`/${item.id}`}>CHECK OUT </Link>
+            <Link className='check-out' to={`/${item.id}`}>{item.price}$ </Link>
             
           </div>
           </SwiperSlide>
@@ -85,8 +96,12 @@ const Theatre = () => {
       </Swiper>
 
       <div>
-        <Button variant="contained" onClick={handleNext}>
+        <Button className="next-btn"  onClick={handleNext}>
           <ArrowForwardIosIcon />
+          <ArrowForwardIosIcon />
+
+          <ArrowForwardIosIcon />
+
         </Button>
       </div>
     </div>

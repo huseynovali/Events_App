@@ -3,14 +3,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper/core";
 import { useSelector, useDispatch } from "react-redux";
 import { CircularProgress, Container, Button } from "@mui/material";
-import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
+// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+// import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "swiper/swiper.min.css";
 import "swiper/css/autoplay";
 import { getTickets, nextTicket, prevTicket } from "../../store/ticketSlice";
 import FamousEvents from "../../Components/FamousEvents";
-import Tourism from "../../Components/Tourism";
 import Theatre from "../../Components/Theatre";
-import "./home.css"
+import "./home.css";
+import Concerts from "../../Components/Concerts";
+import Sport from "../../Components/Sport";
+import Museum from "../../Components/Museum";
+
+
+
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 const Home = () => {
@@ -20,13 +26,13 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getTickets());
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     if (swiperRef.current) {
       swiperRef.current.swiper.autoplay.start();
     }
-  }, [tickets]);
+  }, []);
 
   const handleNext = () => {
     dispatch(nextTicket());
@@ -47,50 +53,58 @@ const Home = () => {
   return (
     <Container fixed>
       {loading ? (
-        <div className="text-center">
+        <div style={{ textAlign: "center" }}>
           <CircularProgress />
         </div>
       ) : (
-        <div className="slide text-red-500">
-          <div className="button-container">
-            <Button className="prev-btn" variant="contained" onClick={handlePrev}>
-              <ArrowBackIosNew />
+        <div className="slide">
+          {/* <div className="button-container">
+            <Button className="prev-btn" variant="contained" style={{width:"100px",height:"100px",borderRadius:"60px"}} onClick={handlePrev}>
+              <ArrowBackIosNewIcon />
+
             </Button>
-          </div>
-          <Swiper
+          </div> */}
+  
+          <Swiper style={{width:"1000px"}}
             ref={swiperRef}
             autoplay={{
               delay: 2000,
             }}
             navigation
             pagination
-            className="w-full"
+            className="mySwiper"
           >
             {tickets.map((item, index) => (
-              <SwiperSlide key={index}>
-                <img src={item.image} alt={item.title} className="w-full" />
-                <h3 className="text-black text-base mt-4">{item.title}</h3>
-                <h2 className="text-red-500 text-lg mt-2">{item.price}</h2>
+              <SwiperSlide  key={index}>
+                <img src={item.image} alt={item.title} />
+                <h3>{item.title}</h3>
+                <h2>{item.price}</h2>
               </SwiperSlide>
             ))}
           </Swiper>
-
-          <div>
-            <Button variant="contained" onClick={handleNext}>
-              <ArrowForwardIos />
+  
+          {/* <div>
+            <Button variant="contained" className="next-btn" style={{width:"100px",height:"100px",borderRadius:"60px"}} onClick={handleNext}>
+              <ArrowForwardIosIcon/>
             </Button>
-          </div>
+          </div> */}
+        
+
+
         </div>
       )}
-
-      <h1 className="mt-8">Populyar Tədbirlər</h1>
-      <FamousEvents />
-      <h1 className="mt-8">Turizm</h1>
-      <Tourism />
-      <h1 className="mt-8">Teatr</h1>
+  
+         <h1 className="mt-8-first">Populyar Tədbirlər</h1>
+      <FamousEvents/>
+      <h1 className="mt-8">Konsertlər</h1>
+      <Concerts />
+      <h1 className="mt-8">Tamaşa</h1>
       <Theatre />
+      <h1 className="mt-8">İdman</h1>
+      <Sport />
+      <h1 className="mt-8">Muzey</h1>
+      <Museum />
     </Container>
   );
-}
-
-export default Home;
+            }
+export default Home

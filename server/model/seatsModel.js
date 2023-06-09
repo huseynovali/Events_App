@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+
+
 const seatSchema = mongoose.Schema({
     name: {
         type: String,
@@ -15,14 +17,4 @@ const seatSchema = mongoose.Schema({
     }
 });
 
-const locationSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    seats: [seatSchema]
-});
-
-export const Location = mongoose.model('Location', locationSchema);
-
-
+export const Seats = mongoose.model('Seats', seatSchema);

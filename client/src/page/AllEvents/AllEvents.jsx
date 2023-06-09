@@ -4,14 +4,15 @@ import {
   FaClock,
   FaMapMarkerAlt,
   FaHeart,
-  FaShare,} from "react-icons/fa";
-  
-  import DatePicker from 'react-datepicker';
-  import 'react-datepicker/dist/react-datepicker.css';
-  
-  import InputRange from 'react-input-range';
-  import 'react-input-range/lib/css/index.css';
-  
+  FaShare,
+} from "react-icons/fa";
+
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+import InputRange from 'react-input-range';
+import 'react-input-range/lib/css/index.css';
+
 import "./AllEvents.css";
 
 function AllEvents() {

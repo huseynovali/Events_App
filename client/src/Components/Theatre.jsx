@@ -48,10 +48,10 @@ const Theatre = () => {
     <div className="famous-events">
       <div className="button-container">
         <Button className="prev-btn"  onClick={handlePrev}>
-            <ArrowBackIosNewIcon />
-            <ArrowBackIosNewIcon />
+            <ArrowBackIosNewIcon className="back-btn" />
+            <ArrowBackIosNewIcon className="back-btn" />
 
-<ArrowBackIosNewIcon />
+<ArrowBackIosNewIcon className="back-btn" />
         </Button>
       </div>
 
@@ -97,10 +97,10 @@ const Theatre = () => {
 
       <div>
         <Button className="next-btn"  onClick={handleNext}>
-          <ArrowForwardIosIcon />
-          <ArrowForwardIosIcon />
+          <ArrowForwardIosIcon className="forward-btn"/>
+          <ArrowForwardIosIcon className="forward-btn"/>
 
-          <ArrowForwardIosIcon />
+          <ArrowForwardIosIcon className="forward-btn"/>
 
         </Button>
       </div>

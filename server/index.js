@@ -8,6 +8,7 @@ import eventsRouter from "./Router/eventRoute.js";
 import fileUpload from "express-fileupload";
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import registerRouter from "./Router/registerRouter.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 dotenv.config()
@@ -29,7 +30,7 @@ app.use('/location', locationRouter)
 app.use('/category', categoryRouter)
 app.use('/events', eventsRouter)
 app.use("/img", express.static(join(__dirname, 'img')));
-
+app.use("/register",registerRouter)
 app.listen(5000, () => console.log("listen..."))
 
 

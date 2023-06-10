@@ -57,13 +57,12 @@ const Home = () => {
       ) : (
         <div className="slide">
           <Swiper
-            style={{ width: "1000px" }}
+          
             ref={swiperRef}
             autoplay={{
               delay: 2000,
             }}
-            navigation
-            pagination
+
             className="mySwiper"
           >
             {tickets.map((item, index) => (

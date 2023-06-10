@@ -56,29 +56,30 @@ const FamousEvents = () => {
       </div>
 
       <Swiper
-        ref={swiperRef}
-        slidesPerView={3}
-        spaceBetween={100}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        className="mySwiper"
-        style={{ padding: '30px 0' }}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          992: {
-            slidesPerView: 2,
-          },
-        }}
-      >
+  ref={swiperRef}
+  slidesPerView={3}
+  spaceBetween={100}
+  autoplay={{
+    delay: 2000,
+    disableOnInteraction: false,
+  }}
+  loop={true}
+  navigation={true}
+  pagination={{
+    clickable: true,
+  }}
+  className="mySwiper"
+  style={{ padding: '30px 0' }}
+  breakpoints={{
+    320: {
+      slidesPerView: 1,
+    },
+    992: {
+      slidesPerView: 2,
+    },
+    
+  }}
+>
         {tickets.map((item, index) => (
           <SwiperSlide key={index} className={`card`}>
             <div className={`card-container`} key={index} style={{ backgroundImage: `url(${item.image})` }}>

@@ -57,6 +57,7 @@ const Home = () => {
       ) : (
         <div className="slide">
           <Swiper
+            style={{ width: "700px" }}
           
             ref={swiperRef}
             autoplay={{

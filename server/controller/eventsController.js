@@ -34,7 +34,7 @@ export const eventController = {
     },
 
 
-    getByiD: (req, cdcres) => {
+    getByiD: (req, res) => {
         const id = req.params.id;
         Event.findById(id)
             .then(data => res.json(data))

@@ -8,7 +8,9 @@ import eventsRouter from "./Router/eventRoute.js";
 import fileUpload from "express-fileupload";
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import registerRouter from "./Router/registerRouter.js";
+import authRouter from "./Router/authRouter.js";
+import jwt from "jsonwebtoken";
+import cartRouter from "./Router/cartRouter.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 dotenv.config()
@@ -26,11 +28,35 @@ dbConnect();
 
 
 app.use(cors());
+
+app.use((req, res, next) => { 
+    if (req.url == '/auth/login' || req.url == '/auth/register') {
+        next();
+    }
+    else {
+        if (req.headers.authorization) {
+            let token = req.headers.authorization.split(' ')[1];
+         
+            try {
+                jwt.verify(token, process.env.PRIVATE_KEY);
+                next();
+            } catch (error) {
+                res.status(401).json({ "msg": "giris edin" })
+            }
+        }
+        else {
+            res.status(401).json({ "msg": "giris edin" })
+        }
+    }
+})
 app.use('/location', locationRouter)
 app.use('/category', categoryRouter)
 app.use('/events', eventsRouter)
+app.use("/cart",cartRouter)
 app.use("/img", express.static(join(__dirname, 'img')));
-app.use("/register",registerRouter)
+app.use("/auth", authRouter);
+
+
 app.listen(5001, () => console.log("listen..."))
 
 

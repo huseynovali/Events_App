@@ -3,24 +3,28 @@ import mongoose from "mongoose";
 const userSchema = mongoose.Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     lastname: {
         type: String,
-        require: true
+        required: true
     },
     phonenumber: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true
+        required: true
     },
     password: {
         type: String,
-        require: true
-    }
-})
+        required: true
+    },
+    favorites: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Event"
+    }]
+});
 
-export default mongoose.model("User", userSchema)
+export default mongoose.model("User", userSchema);

@@ -71,7 +71,7 @@ const Home = () => {
                 <div
                   className={'card-container-main'}
                   key={index}
-                  style={{ backgroundImage: `url(${item.image})`,height:"900px",backgroundRepeat:"no-repeat",backgroundSize:"contain" }}
+                  style={{ backgroundImage: `url(${item.image})`,height:"100%",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"contain" }}
                 ></div>
                 {/* <h3>{item.title}</h3>
                 <h2>{item.price}</h2> */}

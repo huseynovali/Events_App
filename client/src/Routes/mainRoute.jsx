@@ -26,11 +26,11 @@ export default function MainRoutes() {
                 },
                 {
                     path: "login",
-                    element: localStorage.getItem("token") ? <Navigate to={"/"}/> :<Login />
+                    element: localStorage.getItem("token") ? <Navigate to={"/"} /> : <Login />
                 },
                 {
                     path: "register",
-                    element: <Register />
+                    element: localStorage.getItem("token") ? <Navigate to={"/"} /> : <Register />
                 }
 
 

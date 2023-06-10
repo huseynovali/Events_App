@@ -6,9 +6,12 @@ export const register = {
         try {
             console.log(req.body)
             const { name, lastname, phonenumber, email, password } = req.body;
-            const checkUser = await userModel.findOne({ email, phonenumber });
-            if (checkUser)
+            const checkUseremail = await userModel.findOne({ email });
+            if (checkUseremail)
                 return res.status(400).json({ message: "Bu email artiq movcutdur !" })
+            const checkUserphone = await userModel.findOne({ phonenumber });
+            if (checkUserphone)
+                return res.status(400).json({ message: "Bu nömre artıq qeydiyyatdan keçib !" })
 
             const hashedPassword = await bcrypt.hash(password, 10)
             const newUser = await userModel.create({

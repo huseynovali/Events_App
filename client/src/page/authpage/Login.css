@@ -1,4 +1,59 @@
-.login__page{
-background: rgba(255, 237, 174, 1.0);
-background: radial-gradient(at center, rgba(255, 217, 174, 1.0), rgba(255, 201, 15, 1.0));
+.login__page {
+    background: rgba(255, 237, 174, 1.0);
+    background: radial-gradient(at center, rgba(255, 217, 174, 1.0), rgba(255, 201, 15, 1.0));
 }
+
+.login__container {
+    position: relative;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.46);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+
+}
+.login-form{
+    width: 100%;
+}
+.login__container input {
+    width: 100%;
+    position: relative;
+}
+
+.design__img1 img {
+    width: 160px;
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+}
+
+.design__img2 img {
+    width: 260px;
+    position: absolute;
+    left: -100px;
+    top: -50px;
+}
+
+.design__img3 img {
+    width: 260px;
+    position: absolute;
+    right: -80px;
+    top: -10px;
+}
+
+.input__group {
+    position: relative;
+}
+
+.button__group button {
+    background-color: #FFCA14;
+}
+
+.button__group button:hover{
+    background-color: #ffc400;
+}
+
+

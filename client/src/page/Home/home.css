@@ -8,6 +8,12 @@
   height: 80px;
   width: 100%;
 }
+.nav__menu_bar{
+display: none;}
+.menubar{
+  display: none;
+}
+
 li{
   font-size: 16px;
   color: #000;
@@ -187,14 +193,14 @@ background: linear-gradient(to bottom, rgb(255,201,14), white);}
   }
 
   .card {
-    max-width: 100%;
+    max-width: 500px;
   }
 
   .card-container {
-    height: 450px;
+    height: 350px;
   }
 .card-description{
-  height: 450px;
+  height: 350px;
 }
   .card-description h1 {
     font-size: 22px;
@@ -211,23 +217,44 @@ background: linear-gradient(to bottom, rgb(255,201,14), white);}
   .container{
     min-width: 100%;
    }
-   
+   .li{
+    display: none;
+   }
+   .nav__menu_bar{
+    display: block;
+    margin: 0 30px;
+    font-size: 30px;
+   }
+   .menubar{
+    display: block;
+  }
+.text-2xl{
+  font-size: 30px;
+}
+.mt-8-first{
+  transform: translateY(230px)
+}
+
+
 }
 
 @media (max-width: 767px) {
   .mySwiper {
     width: 100%;
   }
+ .card-container-main{
+ width: 100%;
+ }
 
   .card {
-    max-width: 100%;
+    max-width: 400px;
   }
 
   .card-container {
-    height: 480px;
+    height: 380px;
   }
 .card-description{
-  height: 480px;
+  height: 380px;
 }
   .card-description h1 {
     font-size: 26px;
@@ -240,6 +267,22 @@ background: linear-gradient(to bottom, rgb(255,201,14), white);}
   .container{
     min-width: 100%;
    }
+   .li{
+    display: none;
+   }
+   .nav__menu_bar{
+    display: block;
+    margin: 0 30px;
+    font-size: 20px;
+   }
+   .menubar{
+    display: block;
+  }
+.text-2xl{
+  font-size: 20px;
+}
+
+
 }
 @media (min-width: 992px) and (max-width: 1279px) {
   .mySwiper {
@@ -368,7 +411,17 @@ margin: 0 4px;
   .col-xs-12 {
       width: 100%;
   }
+.nav__menu_bar{
+  display: block;
+  
+}
+.menubar{
+  display: block;
+}
 
+.logo{
+  width: 150px;
+}
 }
 
 /* phone responsive - sm */

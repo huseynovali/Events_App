@@ -57,7 +57,7 @@ const Home = () => {
       ) : (
         <div className="slide">
           <Swiper
-            style={{ width: "1000px" }}
+            style={{ width: "700px" }}
             ref={swiperRef}
             autoplay={{
               delay: 2000,

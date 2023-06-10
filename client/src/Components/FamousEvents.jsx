@@ -77,6 +77,7 @@ const FamousEvents = () => {
     992: {
       slidesPerView: 2,
     },
+    
   }}
 >
         {tickets.map((item, index) => (

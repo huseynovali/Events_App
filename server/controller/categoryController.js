@@ -2,7 +2,7 @@ import { Category } from "../model/categoryModel.js";
 
 
 export const categoryController = {
-    getAll: (res) => {
+    getAll: (req,res) => {
         Category.find()
             .then(data => res.json(data))
             .catch(err => res.status(500).json({ error: err.message }))

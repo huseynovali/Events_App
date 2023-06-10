@@ -6,6 +6,8 @@ import MainLayout from "../Layout/MainLayout";
 
 import AllEvents from "../page/AllEvents/AllEvents";
 import Home from "../page/Home/Home";
+import Login from "../page/authpage/Login";
+import Register from "../page/authpage/Register";
 
 export default function MainRoutes() {
     const isTrue = true
@@ -15,12 +17,20 @@ export default function MainRoutes() {
             path: '/',
             children: [
                 {
-                    index:true,
+                    index: true,
                     element: <Home />,
                 },
                 {
                     path: "allevents",
                     element: <AllEvents />
+                },
+                {
+                    path: "login",
+                    element: localStorage.getItem("token") ? <Navigate to={"/"}/> :<Login />
+                },
+                {
+                    path: "register",
+                    element: <Register />
                 }
 
 

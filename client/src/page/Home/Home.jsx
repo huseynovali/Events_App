@@ -58,12 +58,12 @@ const Home = () => {
         <div className="slide">
           <Swiper
             style={{ width: "700px" }}
+          
             ref={swiperRef}
             autoplay={{
               delay: 2000,
             }}
-            navigation
-            pagination
+
             className="mySwiper"
           >
             {tickets.map((item, index) => (
@@ -71,7 +71,7 @@ const Home = () => {
                 <div
                   className={'card-container-main'}
                   key={index}
-                  style={{ backgroundImage: `url(${item.image})`,height:"900px",backgroundRepeat:"no-repeat",backgroundSize:"contain" }}
+                  style={{ backgroundImage: `url(${item.image})`,height:"100%",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"contain" }}
                 ></div>
                 {/* <h3>{item.title}</h3>
                 <h2>{item.price}</h2> */}

@@ -47,11 +47,11 @@ const FamousEvents = () => {
   return (
     <div className="famous-events">
       <div className="button-container">
-        <Button className="prev-btn"  onClick={handlePrev}>
-            <ArrowBackIosNewIcon className="back-btn" />
-            <ArrowBackIosNewIcon className="back-btn" />
+        <Button className="prev-btn" onClick={handlePrev}>
+          <ArrowBackIosNewIcon className="back-btn" />
+          <ArrowBackIosNewIcon className="back-btn" />
 
-<ArrowBackIosNewIcon className="back-btn" />
+          <ArrowBackIosNewIcon className="back-btn" />
         </Button>
       </div>
 
@@ -82,23 +82,23 @@ const FamousEvents = () => {
 >
         {tickets.map((item, index) => (
           <SwiperSlide key={index} className={`card`}>
-          <div className={`card-container`} key={index} style={{backgroundImage: `url(${item.image})`}}>
-            <div className='card-description'>
-              <h1>{item.title}</h1>
-              <p> {item.authors}</p>
-              <h3>{item.price}$</h3>
+            <div className={`card-container`} key={index} style={{ backgroundImage: `url(${item.image})` }}>
+              <div className='card-description'>
+                <h1>{item.title}</h1>
+                <p> {item.authors}</p>
+                <h3>{item.price}$</h3>
+              </div>
+
+              <Link className='check-out' to={`/${item.id}`}>{item.price}$ </Link>
+
             </div>
-            
-            <Link className='check-out' to={`/${item.id}`}>{item.price}$ </Link>
-            
-          </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
       <div>
-        <Button className="next-btn"  onClick={handleNext}>
-          <ArrowForwardIosIcon className="forward-btn"/>
+        <Button className="next-btn" onClick={handleNext}>
+          <ArrowForwardIosIcon className="forward-btn" />
           <ArrowForwardIosIcon className="forward-btn" />
 
           <ArrowForwardIosIcon className="forward-btn" />

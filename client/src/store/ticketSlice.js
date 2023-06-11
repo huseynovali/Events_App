@@ -12,10 +12,16 @@ const initialState = {
 
 export const getTickets = createAsyncThunk(
   "/",
-  async (_, { rejectWithValue }) => {
+  async (limit, { rejectWithValue }) => {
     try {
-      let res = await axios.get("https://fakestoreapi.com/products");
-      return res.data;
+      const token = JSON.parse(localStorage.getItem("token")); // Geçerli erişim belirtecini buraya yerleştirin
+      const response = await axios.get(`http://localhost:5001/events?limit=${limit}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      return response.data
+
     } catch (error) {
       return rejectWithValue(error.response.data);
     }

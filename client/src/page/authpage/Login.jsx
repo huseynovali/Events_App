@@ -30,6 +30,7 @@ const Login = () => {
             const response = await axios.post("http://localhost:5001/auth/login", values);
             const token = response.data.token;
             localStorage.setItem("token", JSON.stringify(token));
+            localStorage.setItem("userid", JSON.stringify(response.data._id))
             setErr("")
             navigate("/")
             resetForm();

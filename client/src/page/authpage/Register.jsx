@@ -35,8 +35,6 @@ const Register = () => {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       const response = await axios.post("http://localhost:5001/auth/register", values);
-      localStorage.setItem("userid", JSON.stringify(response.data._id))
-
       navigate("/login")
       resetForm();
     } catch (error) {

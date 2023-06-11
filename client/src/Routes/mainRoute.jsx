@@ -8,6 +8,7 @@ import AllEvents from "../page/AllEvents/AllEvents";
 import Home from "../page/Home/Home";
 import Login from "../page/authpage/Login";
 import Register from "../page/authpage/Register";
+import EventDetails from "../page/eventdetail/EventDetails";
 
 export default function MainRoutes() {
     const isTrue = true
@@ -31,6 +32,9 @@ export default function MainRoutes() {
                 {
                     path: "register",
                     element: localStorage.getItem("token") ? <Navigate to={"/"} /> : <Register />
+                },{
+                    path: "event/:id",
+                    element: <EventDetails/>
                 }
 
 

@@ -14,13 +14,14 @@ export const eventController = {
                 path: "location",
                 select: "-seats"
             })
+            .limit(limit)
             .then(data => {
                 const eventsWithImageUrl = data.map(event => {
                     let imageUrl = event.imageUrl;
                     if (Array.isArray(imageUrl)) {
-                        imageUrl = imageUrl.map(fileName => `http://localhost:5000/img/${fileName}`);
+                        imageUrl = imageUrl.map(fileName => `http://localhost:5001/img/${fileName}`);
                     } else {
-                        imageUrl = `http://localhost:5000/img/${imageUrl}`;
+                        imageUrl = `http://localhost:5001/img/${imageUrl}`;
                     }
 
                     return {

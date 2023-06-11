@@ -3,17 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper/core";
 import { useSelector, useDispatch } from "react-redux";
 import { CircularProgress, Container, Button } from "@mui/material";
-// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-// import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "swiper/swiper.min.css";
 import "swiper/css/autoplay";
 import { getTickets, nextTicket, prevTicket } from "../../store/ticketSlice";
-import FamousEvents from "../../Components/FamousEvents";
-import Theatre from "../../Components/Theatre";
 import "./home.css";
-import Concerts from "../../Components/Concerts";
-import Sport from "../../Components/Sport";
-import Museum from "../../Components/Museum";
 import moment from "moment"
 import "../../language/az"
 import { Link } from "react-router-dom";
@@ -36,8 +29,7 @@ const Home = () => {
     if (swiperRef.current) {
       swiperRef.current.swiper.autoplay.start();
     }
-  }, []);
-
+}, [tickets]);
   const handleNext = () => {
     dispatch(nextTicket());
     if (swiperRef.current) {
@@ -68,7 +60,7 @@ const Home = () => {
                 delay: 2000,
                 disableOnInteraction: false
               }}
-              className="mySwiper mySwiper-head relative h-[80vh] "
+              className="mySwiper mySwiper-head relative h-[70vh]  md:h-[80vh]"
             >
               <div className="back_btn absolute -left-10 top-[40%] z-50">
                 <Button variant="contained" className="back-btn relative text-white" style={{ width: "100px", height: "100px", borderRadius: "10px", background: 'rgb(255, 201, 14) ' }} onClick={handlePrev}>
@@ -78,7 +70,7 @@ const Home = () => {
               {tickets.map((item, index) => (
                 <SwiperSlide className="swiperslide relative" key={index}>
                   <Link to={`event/${item._id}`}>
-                    <img src={item.imageUrl[0]} alt="" className="object-cover" />
+                    <img src={item.imageUrl[0]} alt="" className="object-full" />
                     <div className="swiper__body absolute bottom-2 left-5">
                       <h1 className="text-xl">{item?.name}</h1>
                       <h1 className="text-gray-500">{moment(item.date).format('llll')}</h1>

@@ -28,15 +28,19 @@ dbConnect();
 
 
 app.use(cors());
-
+app.use("/img", express.static(join(__dirname, 'img')));
+app.use('/location', locationRouter)
+app.use('/category', categoryRouter)
+app.use('/events', eventsRouter)
 app.use((req, res, next) => { 
-    if (req.url == '/auth/login' || req.url == '/auth/register') {
+    if (req.url == '/auth/login' || req.url == '/auth/register' ) {
         next();
     }
     else {
+
         if (req.headers.authorization) {
             let token = req.headers.authorization.split(' ')[1];
-         
+           
             try {
                 jwt.verify(token, process.env.PRIVATE_KEY);
                 next();
@@ -49,11 +53,9 @@ app.use((req, res, next) => {
         }
     }
 })
-app.use('/location', locationRouter)
-app.use('/category', categoryRouter)
-app.use('/events', eventsRouter)
+
 app.use("/cart",cartRouter)
-app.use("/img", express.static(join(__dirname, 'img')));
+
 app.use("/auth", authRouter);
 
 

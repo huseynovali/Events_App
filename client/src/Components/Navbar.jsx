@@ -203,6 +203,36 @@ function Navbar() {
             contentLabel="Example Modal"
 
           >
+<div className="content">
+  <div className="header">
+    <h2 ref={(_subtitle) => (subtitle = _subtitle)} className='text-center text-2xl'>
+      <span className="text-blue-800">Search</span>
+    </h2>
+    <button onClick={closeModal} className='absolute top-2 right-2'>
+      <AiOutlineClose className='text-2xl' />
+    </button>
+  </div>
+  <form>
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Axtarış..."
+      value={searchText}
+      className='w-full p-3 border rounded-md mt-2'
+      onChange={(e) => setSearchText(e.target.value)}
+    />
+  </form>
+  <h1 className='text-2xl my-2 mx-1 py-5 font-bold text-blue-800'>Tədbirlər</h1>
+  <hr />
+  <ul id="search-results" className='overflow-y-scroll h-[400px]'>
+    {searchResults.map((item, index) => (
+      <Link key={index} to={`/event/${item._id}`} className='p-2'>
+        <li onClick={closeModal} className='p-2 w-full border-b'>{item.name}</li>
+      </Link>
+    ))}
+  </ul>
+</div>
+
 
             <div className="content w-[80vw] lg:w-[50vw]">
               <div className="header">
@@ -231,7 +261,7 @@ function Navbar() {
                 ))}
               </ul>
 
-            </div>
+
           </Modal>
         </div>
       </div>

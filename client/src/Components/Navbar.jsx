@@ -72,7 +72,11 @@ function Navbar() {
             </div>
           </div>
           <div className="nav__profile">
-            <BiUserCircle className="text-2xl text-gray-900" />
+            <Link to={"login"}>
+              <BiUserCircle className="text-2xl text-gray-900" />
+            </Link>
+
+
           </div>
           <Button
             id="basic-button"

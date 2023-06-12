@@ -15,7 +15,9 @@
     overflow: hidden;
 
 }
-
+button{
+    z-index: 10;
+}
 .login-form {
     width: 100%;
 }

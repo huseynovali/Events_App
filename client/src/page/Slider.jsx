@@ -13,8 +13,7 @@ function Slider() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getTickets(1000));
-
+        dispatch(getTickets({ limit: 100, category: "" }));
     }, []);
 
 
@@ -36,7 +35,7 @@ function Slider() {
                 <Sport tickets={tickets} />
             </div>
 
-            {/* 
+
             <div className="museum">
                 <h1 className="text-3xl font-bold ml-2">Muzey</h1>
                 <Museum tickets={tickets} />
@@ -45,7 +44,7 @@ function Slider() {
             <div className="famous  my-20">
                 <h1 className="text-3xl font-bold ml-2">Turizm</h1>
                 <FamousEvents tickets={tickets} />
-    </div> */}
+            </div>
 
         </div>
     )

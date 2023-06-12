@@ -11,8 +11,7 @@ export const eventController = {
         Event.find()
             .populate("category")
             .populate({
-                path: "location",
-                select: "-seats"
+                path: "location"
             })
             .limit(limit)
             .then(data => {
@@ -33,7 +32,59 @@ export const eventController = {
             })
             .catch(err => res.status(500).json({ error: err.message }))
     },
-
+    getByCategory: (req, res) => {
+        const category = req.params.category;
+        Event.find({ category })
+          .populate("category")
+          .populate({
+            path: "location",
+          })
+          .then((data) => {
+            const eventsWithImageUrl = data.map((event) => {
+              let imageUrl = event.imageUrl;
+              if (Array.isArray(imageUrl)) {
+                imageUrl = imageUrl.map((fileName) => `http://localhost:5001/img/${fileName}`);
+              } else {
+                imageUrl = `http://localhost:5001/img/${imageUrl}`;
+              }
+      
+              return {
+                ...event.toObject(),
+                imageUrl: imageUrl, // Resim URL'sini oluşturun
+              };
+            });
+            res.json(eventsWithImageUrl);
+          })
+          .catch((err) => res.status(500).json({ error: err.message }));
+      },
+      
+      getAll: (req, res) => {
+        const limit = req.query.limit || 10;
+        Event.find()
+          .populate("category")
+          .populate({
+            path: "location",
+          })
+          .limit(limit)
+          .then((data) => {
+            const eventsWithImageUrl = data.map((event) => {
+              let imageUrl = event.imageUrl;
+              if (Array.isArray(imageUrl)) {
+                imageUrl = imageUrl.map((fileName) => `http://localhost:5001/img/${fileName}`);
+              } else {
+                imageUrl = `http://localhost:5001/img/${imageUrl}`;
+              }
+      
+              return {
+                ...event.toObject(),
+                imageUrl: imageUrl, // Resim URL'sini oluşturun
+              };
+            });
+            res.json(eventsWithImageUrl);
+          })
+          .catch((err) => res.status(500).json({ error: err.message }));
+      },
+      
 
     getByiD: (req, res) => {
         const id = req.params.id;
@@ -91,14 +142,14 @@ export const eventController = {
         Event.findByIdAndDelete(id)
             .then((data) => {
                 const imageUrls = data.imageUrl;
-    
+
                 if (!Array.isArray(imageUrls)) {
                     return res.send(`Event and associated images removed.`);
                 }
-    
+
                 const currentFilePath = fileURLToPath(import.meta.url);
                 const currentDirPath = dirname(currentFilePath);
-    
+
                 imageUrls.forEach(item => {
                     const imagePath = join(currentDirPath, '..', 'img', item);
                     fs.unlink(imagePath, function (err) {
@@ -109,13 +160,13 @@ export const eventController = {
                         }
                     });
                 });
-    
+
                 res.send(`Event and associated images removed.`);
             })
             .catch(err => res.status(500).json({ error: err.message }));
     }
-,    
-    
+    ,
+
     createReservation: (req, res) => {
         const id = req.params.id;
         const seatId = req.params.seatId;

@@ -18,9 +18,6 @@ const Museum = ({tickets}) => {
   const swiperRef = useRef(null);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getTickets());
-  }, [dispatch]);
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -62,7 +59,7 @@ const Museum = ({tickets}) => {
           delay: 2000,
           disableOnInteraction: false,
         }}
-        loop={true}
+        loop
         navigation={true}
         pagination={{
           clickable: true,

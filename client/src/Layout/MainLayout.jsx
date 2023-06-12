@@ -21,13 +21,13 @@ function MainLayout() {
                 <h4>Sosial Şəbəkələr</h4>
                 <div className="row justify-center gap-x-2" >
                   <div className="col-3 flex items-start">
-                    <a href="#"><AiFillFacebook className="text-3xl"/></a>
+                    <a href="#"><AiFillFacebook className="text-3xl" /></a>
                   </div>
                   <div className="col-3 flex items-start">
-                    <a href="#"><AiOutlineInstagram className="text-3xl"/></a>
+                    <a href="#"><AiOutlineInstagram className="text-3xl" /></a>
                   </div>
                   <div className="col-3 flex items-start">
-                    <a href="#"><AiOutlineTwitter className="text-3xl"/></a>
+                    <a href="#"><AiOutlineTwitter className="text-3xl" /></a>
                   </div>
                 </div>
 

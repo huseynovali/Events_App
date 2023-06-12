@@ -233,35 +233,6 @@ function Navbar() {
   </ul>
 </div>
 
-
-            <div className="content w-[80vw] lg:w-[50vw]">
-              <div className="header">
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)} className='text-center text-2xl'>Search</h2>
-                <button onClick={closeModal} className='absolute top-2 right-2 '>
-                  <AiOutlineClose className='text-2xl' />
-                </button>
-              </div>
-              <form>
-                <input
-                  type="text"
-                  id="search-input"
-                  placeholder="Arama yap..."
-                  value={searchText}
-                  className='w-full p-3 border rounded-md mt-2 '
-                  onChange={(e) => setSearchText(e.target.value)}
-                />
-              </form>
-              <h1 className='text-2xl my-2 mx-1'>List</h1>
-              <hr />
-              <ul id="search-results" className='overflow-y-scroll h-[300px]'>
-                {searchResults.map((item, index) => (
-                  <Link key={index} to={`/event/${item._id}`} className='p-2'>
-                    <li onClick={closeModal} className='p-2 w-full'>{item.name}</li>
-                  </Link>
-                ))}
-              </ul>
-
-
           </Modal>
         </div>
       </div>

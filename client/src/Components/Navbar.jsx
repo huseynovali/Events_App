@@ -16,7 +16,7 @@ import { useSelector } from 'react-redux';
 
 const customStyles = {
   content: {
-     width:"70vw",
+    width: "70vw",
     height: "70vh",
     overflow: "hidden",
     top: '20%',

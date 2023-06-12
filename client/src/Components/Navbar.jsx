@@ -23,7 +23,7 @@ function Navbar() {
         <div className="nav__brand">
           <Link to="/">
 
-            <img src={imgnavbrand} alt="" className='h-[50px]'/>
+            <img src={imgnavbrand} alt="" className='h-[50px]' />
 
           </Link>
         </div>
@@ -32,28 +32,33 @@ function Navbar() {
           <div className="nav__links hidden sm:block" style={{ margin: "0 30px 0 30px" }}>
             <ul className="flex space-x-14" style={{ margin: "0 30px 0 30px", width: "100%" }}>
               <li className='li'>
-                <Link to="#" className="text-gray-900 hover:text-sun_Yellow">
+                <Link to="/events" className="text-gray-900 hover:text-sun_Yellow">
                   Bütün Tədbirlər
                 </Link>
               </li>
               <li className='li'>
-                <Link to="#" className="text-gray-900 hover:text-sun_Yellow">
+                <Link to="/concerts" className="text-gray-900 hover:text-sun_Yellow">
                   Konsertlər
                 </Link>
               </li>
               <li className='li'>
-                <Link to="#" className="text-gray-900 hover:text-sun_Yellow">
+                <Link to="/show" className="text-gray-900 hover:text-sun_Yellow">
                   Tamaşa
                 </Link>
               </li>
               <li className='li'>
-                <Link to="#" className="text-gray-900 hover:text-sun_Yellow">
+                <Link to="/sport" className="text-gray-900 hover:text-sun_Yellow">
                   İdman
                 </Link>
               </li>
               <li className='li'>
-                <Link to="#" className="text-gray-900 hover:text-sun_Yellow">
+                <Link to="/museam" className="text-gray-900 hover:text-sun_Yellow">
                   Muzey
+                </Link>
+              </li>
+              <li className='li'>
+                <Link to="/tourism" className="text-gray-900 hover:text-sun_Yellow">
+                  Turizm
                 </Link>
               </li>
             </ul>
@@ -70,33 +75,48 @@ function Navbar() {
             <BiUserCircle className="text-2xl text-gray-900" />
           </div>
           <Button
-        id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
- <div className="nav__menu_bar mx-4">
-            <FaBars className="text-gray-900" />
-          </div>      </Button>
+            id="basic-button"
+            aria-controls={open ? 'basic-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            onClick={handleClick}
+          >
+            <div className="nav__menu_bar mx-4">
+              <FaBars className="text-gray-900" />
+            </div>      </Button>
           <Menu className='menubar'
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>Populyar Tədbirlər</MenuItem>
-        <MenuItem onClick={handleClose}>Konsertlər</MenuItem>
-        <MenuItem onClick={handleClose}>Muzey</MenuItem>
-        <MenuItem onClick={handleClose}>Tamaşa</MenuItem>
-        <MenuItem onClick={handleClose}>İdman</MenuItem>
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              'aria-labelledby': 'basic-button',
+            }}
+          >
+            <Link to="/events" className="text-gray-900 hover:text-sun_Yellow">
+              <MenuItem onClick={handleClose}>Bütün Tədbirlər</MenuItem>
+            </Link>
+            <Link to="/concerts" className="text-gray-900 hover:text-sun_Yellow">
+              <MenuItem onClick={handleClose}>Konsertlər</MenuItem></Link>
+            <Link to="/show" className="text-gray-900 hover:text-sun_Yellow">
+              <MenuItem onClick={handleClose}>Tamaşa</MenuItem>
+            </Link>
+            <Link to="/sport" className="text-gray-900 hover:text-sun_Yellow">
+              <MenuItem onClick={handleClose}>İdman</MenuItem>
+            </Link>
+
+            <Link to="/museam" className="text-gray-900 hover:text-sun_Yellow">
+              <MenuItem onClick={handleClose}>Muzey</MenuItem>
+            </Link>
+            <Link to="/tourism" className="text-gray-900 hover:text-sun_Yellow">
+              <MenuItem onClick={handleClose}>Turizm</MenuItem>
+            </Link>
 
 
-      </Menu>
-         
+
+
+          </Menu>
+
         </div>
       </div>
     </nav>

@@ -18,9 +18,7 @@ const Theatre = ({ tickets }) => {
   const swiperRef = useRef(null);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getTickets());
-  }, [dispatch]);
+
 
   useEffect(() => {
     if (swiperRef.current) {

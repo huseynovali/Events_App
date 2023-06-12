@@ -5,7 +5,6 @@ import { Location } from "../model/locationModel.js"
 export const locationController = {
     getAll: (req, res) => {
         Location.find()
-            .select("name")
             .then(data => res.json(data))
             .catch(err => res.status(500).json({ error: err.message }))
     }

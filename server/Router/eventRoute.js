@@ -6,6 +6,7 @@ const eventsRouter = express.Router();
 
 eventsRouter.get("/", eventController.getAll);
 eventsRouter.get("/:id", eventController.getByiD);
+eventsRouter.get("/category/:category", eventController.getByCategory);
 eventsRouter.post("/", eventController.addEvent);
 eventsRouter.post("/favorite/:userId/favorites/:eventId", favorites.addFavorite);
 eventsRouter.get("/favorite/:userId/", favorites.listFavorites);

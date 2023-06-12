@@ -6,16 +6,19 @@ import axios from "axios";
 const initialState = {
   tickets: [],
   loading: true,
-  error: {},
+  error: "",
   currentIndex: 0,
 };
 
 export const getTickets = createAsyncThunk(
   "/",
-  async (limit, { rejectWithValue }) => {
+  async ({ limit, category }, { rejectWithValue }) => {
+
     try {
-      const token = JSON.parse(localStorage.getItem("token")); // Geçerli erişim belirtecini buraya yerleştirin
-      const response = await axios.get(`http://localhost:5001/events?limit=${limit}`, {
+      console.log(category);
+      const token = JSON.parse(localStorage.getItem("token"));
+      let url = category ? `http://localhost:5001/events/category/${category}?limit=${limit}` : `http://localhost:5001/events?limit=${limit}`
+      const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }

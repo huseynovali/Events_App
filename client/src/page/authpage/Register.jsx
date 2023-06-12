@@ -25,9 +25,9 @@ const Register = () => {
     name: Yup.string(),
     lastname: Yup.string(),
     phonenumber: Yup.string()
-      .matches(/^(\+994|0)?(50|51|10|55|70|99)\d{7}$/, "Nömrəni  düzgün girin !")
+      .matches(/^(\+994|0)?(50|51|10|55|70|99)\d{7}$/, "Nömrəni  düzgün daxil edin !")
       .required("Telefon nömrəsi mütləq daxil edilməlidir"),
-    email: Yup.string().email("Düzgün bir email adresi girin").required("Email mütləq daxil edilməlidir !"),
+    email: Yup.string().email("Düzgün bir email adresi daxil edin").required("Email mütləq daxil edilməlidir !"),
     password: Yup.string().required("Şifre mütləq daxil edilməlidir ")
   });
 

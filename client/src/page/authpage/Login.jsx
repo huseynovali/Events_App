@@ -20,7 +20,7 @@ const Login = () => {
 
 
     const validationSchema = Yup.object().shape({
-        email: Yup.string().email("Düzgün bir email adresi girin").required("Email mütləq daxil edilməlidir !"),
+        email: Yup.string().email("Düzgün bir email adresi daxil edin").required("Email mütləq daxil edilməlidir !"),
         password: Yup.string().required("Şifre mütləq daxil edilməlidir ")
     });
 

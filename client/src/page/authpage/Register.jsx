@@ -98,7 +98,7 @@ const Register = () => {
             </div>
             <div className="button__group w-full flex justify-center items-end flex-col">
               <button type="submit" className="py-3 px-5 my-3 rounded-lg text-white ">Qeydiyyatdan keçin</button>
-              <Link to="/login" className="mt-5 z-20"> <button className="py-2 px-3 my-2 rounded-lg text-white z-10">Giriş Et</button></Link>
+              <Link to="/login" className="mt-5 z-20"> <button className="py-2 px-3 my-2 rounded-lg text-white z-10">Daxil ol</button></Link>
             </div>
           </Form>
         </Formik>

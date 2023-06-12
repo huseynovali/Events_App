@@ -77,7 +77,7 @@ const Login = () => {
                                 <ErrorMessage name="password" component="div" className="error-message  text-red-400" />
                             </div>
                             <div className="button__group w-full flex justify-center items-end flex-col">
-                                <button type="submit" className="py-3 px-5 my-4 rounded-lg text-white z-10">Giriş Et</button>
+                                <button type="submit" className="py-3 px-5 my-4 rounded-lg text-white z-10">Daxil ol</button>
                                 <Link to="/register" className="mt-5 z-20"><button className="py-2  px-3 rounded-lg text-white ">Qeydiyyatdan keçin</button></Link>
 
                             </div>

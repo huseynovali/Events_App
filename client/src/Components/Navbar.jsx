@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineHeart, AiOutlineSearch, AiOutlineClose } from 'react-icons/ai';
 import { BiUserCircle } from 'react-icons/bi';
 import { FaBars } from 'react-icons/fa';
+import { FiLogOut } from 'react-icons/fi';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -15,7 +16,7 @@ import { useSelector } from 'react-redux';
 
 const customStyles = {
   content: {
-    width: "50vw",
+
     height: "70vh",
     overflow: "hidden",
     top: '20%',
@@ -141,13 +142,21 @@ function Navbar() {
               <AiOutlineHeart className="text-2xl text-gray-900" />
             </div>
           </div>
+
           <div className="nav__profile">
-            <Link to={"login"}>
-              <BiUserCircle className="text-2xl text-gray-900" />
-            </Link>
+            {
+              localStorage.getItem("token") ?
+                <FiLogOut className="text-2xl text-gray-900" onClick={() => localStorage.removeItem("token")} />
+                :
+                <Link to={"login"}>
+                  <BiUserCircle className="text-2xl text-gray-900" />
+                </Link>
+            }
+
           </div>
           <Button
             id="basic-button"
+            className='z-0'
             aria-controls={open ? 'basic-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
@@ -157,6 +166,7 @@ function Navbar() {
               <FaBars className="text-gray-900" />
             </div>
           </Button>
+
           <Menu className='menubar'
             id="basic-menu"
             anchorEl={anchorEl}
@@ -222,6 +232,34 @@ function Navbar() {
     ))}
   </ul>
 </div>
+
+
+            <div className="content w-[80vw] lg:w-[50vw]">
+              <div className="header">
+                <h2 ref={(_subtitle) => (subtitle = _subtitle)} className='text-center text-2xl'>Search</h2>
+                <button onClick={closeModal} className='absolute top-2 right-2 '>
+                  <AiOutlineClose className='text-2xl' />
+                </button>
+              </div>
+              <form>
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Arama yap..."
+                  value={searchText}
+                  className='w-full p-3 border rounded-md mt-2 '
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+              </form>
+              <h1 className='text-2xl my-2 mx-1'>List</h1>
+              <hr />
+              <ul id="search-results" className='overflow-y-scroll h-[300px]'>
+                {searchResults.map((item, index) => (
+                  <Link key={index} to={`/event/${item._id}`} className='p-2'>
+                    <li onClick={closeModal} className='p-2 w-full'>{item.name}</li>
+                  </Link>
+                ))}
+              </ul>
 
 
           </Modal>

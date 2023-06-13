@@ -4,13 +4,14 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../page/Home/Home";
 import Login from "../page/authpage/Login";
 import Register from "../page/authpage/Register";
-import EventDetails from "../page/eventdetail/EventDetails";
 import AllEvents from "../page/AllEvents/AllEvents";
 import Concerts from "../page/Concert";
 import Show from "../page/Show";
 import Sport from "../page/Sport";
 import Museam from "../page/Museam";
 import Tourism from "../page/Tourism";
+import EventDetail from "../page/DetalPage/EventDetail";
+import FavoritePage from "../page/FavoritePage/FavoritePage";
 
 export default function MainRoutes() {
     const isTrue = true;
@@ -57,8 +58,12 @@ export default function MainRoutes() {
                 },
                 {
                     path: "event/:id",
-                    element: <EventDetails />,
+                    element: <EventDetail />,
                 },
+                {
+                    path:"favorites",
+                    element:<FavoritePage/>
+                }
             ],
         },
     ];

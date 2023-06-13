@@ -60,7 +60,7 @@ function Navbar() {
         return (
           event.category?.name.toLowerCase().includes(lowerSearchText) ||
           event.name.toLowerCase().includes(lowerSearchText) ||
-          event.location.name.toLowerCase().includes(lowerSearchText)
+          event.location?.name.toLowerCase().includes(lowerSearchText)
         );
       })
     );
@@ -138,15 +138,13 @@ function Navbar() {
             <AiOutlineSearch className="text-2xl text-gray-900" onClick={openModal} />
           </div>
           <div className="nav__details flex items-center mx-5">
-            <div className="nav__favorite">
-              <AiOutlineHeart className="text-2xl text-gray-900" />
-            </div>
+           
           </div>
 
           <div className="nav__profile">
             {
               localStorage.getItem("token") ?
-                <FiLogOut className="text-2xl text-gray-900" onClick={() => localStorage.removeItem("token")} />
+                <FiLogOut className="text-2xl text-gray-900" onClick={() => (localStorage.removeItem("token"), localStorage.removeItem("userid"), window.location.reload)} />
                 :
                 <Link to={"login"}>
                   <BiUserCircle className="text-2xl text-gray-900" />

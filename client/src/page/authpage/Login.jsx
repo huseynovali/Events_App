@@ -29,8 +29,9 @@ const Login = () => {
         try {
             const response = await axios.post("http://localhost:5001/auth/login", values);
             const token = response.data.token;
+            console.log(response?.data?.user._id);
             localStorage.setItem("token", JSON.stringify(token));
-            localStorage.setItem("userid", JSON.stringify(response.data._id))
+            localStorage.setItem("userid", JSON.stringify(response?.data?.user?._id))
             setErr("")
             navigate("/")
             resetForm();
@@ -42,21 +43,21 @@ const Login = () => {
 
     return (
         <>
-          
+
 
 
 
             <div className="login__page py-24 flex justify-center items-center">
                 <div className="login__container w-[80vw] md:w-[50vw] lg:w-[30vw] flex flex-col justify-center items-center relative">
-                   {
-                err &&
-                <figure className="notification bg-red-500 absolute top-10 w-[80%] p-5 z-20 rounded-lg ">
-                    <div className="notification__body text-white text-xl">
-                        {err}
-                    </div>
+                    {
+                        err &&
+                        <figure className="notification bg-red-500 absolute top-10 w-[80%] p-5 z-20 rounded-lg ">
+                            <div className="notification__body text-white text-xl">
+                                {err}
+                            </div>
 
-                </figure>
-            }
+                        </figure>
+                    }
                     <h2 className="text-3xl">Login</h2>
                     <div className="design__img1">
                         <img src={designBlob1} alt="" />

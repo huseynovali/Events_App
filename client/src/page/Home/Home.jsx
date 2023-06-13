@@ -64,7 +64,7 @@ const Home = () => {
         <Loading />
       ) : (
         <>
-          <div className="slide py-10 px-1">
+          <div className="slide slide-home py-10 px-1">
             <Swiper
               loop
               ref={swiperRef}

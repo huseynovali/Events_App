@@ -19,7 +19,7 @@ function Slider() {
 
     return (
 
-        <div>
+        <div className='slide-home'>
 
             <div className="concerts">
                 <h1 className="text-3xl font-bold ml-2">Konsertlər</h1>

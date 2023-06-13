@@ -5,7 +5,7 @@ import { favorites } from "../controller/favorite.js";
 const eventsRouter = express.Router();
 
 eventsRouter.get("/", eventController.getAll);
-eventsRouter.get("/:id", eventController.getByiD);
+eventsRouter.get("/:id", eventController.getById);
 eventsRouter.get("/category/:category", eventController.getByCategory);
 eventsRouter.post("/", eventController.addEvent);
 eventsRouter.post("/favorite/:userId/favorites/:eventId", favorites.addFavorite);

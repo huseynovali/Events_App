@@ -20,7 +20,15 @@ const locationSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    seats: [seatSchema]
+    seats: [seatSchema],
+    lat: {
+        type: String
+    },
+    lng: {
+        type: String,
+
+    },
+
 });
 
 export const Location = mongoose.model('Location', locationSchema);

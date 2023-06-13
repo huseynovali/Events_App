@@ -565,3 +565,11 @@ li {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+
+
+
+.slide-home .swiper-button-prev,
+.slide-home .swiper-button-next {
+  display: none !important;
+}
+

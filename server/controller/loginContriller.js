@@ -17,7 +17,7 @@ const login = async (req, res) => {
             return res.status(500).json({ message: "Şifre yanlıştır!" });
         } else {
             let token = jwt.sign(req.body.email, process.env.PRIVATE_KEY)
-            res.json({ "token": token })
+            res.json({ "token": token,"user":user })
         }
     } catch (err) {
         res.status(500).json({ message: err.message });

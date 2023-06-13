@@ -86,12 +86,31 @@ export const eventController = {
       },
       
 
-    getByiD: (req, res) => {
-        const id = req.params.id;
-        Event.findById(id)
-            .then(data => res.json(data))
-            .catch(err => res.status(500).json({ error: err.message }))
-    },
+getById: (req, res) => {
+  const id = req.params.id;
+  Event.findById(id)
+  .populate("category")
+  .populate({
+    path: "location",
+  })
+    .then((data) => {
+      let imageUrl = data.imageUrl;
+      if (Array.isArray(imageUrl)) {
+        imageUrl = imageUrl.map((fileName) => `http://localhost:5001/img/${fileName}`);
+      } else {
+        imageUrl = `http://localhost:5001/img/${imageUrl}`;
+      }
+      
+      const eventWithImageUrl = {
+        ...data.toObject(),
+        imageUrl: imageUrl, // Resim URL'sini oluşturun
+      };
+      
+      res.json(eventWithImageUrl);
+    })
+    .catch((err) => res.status(500).json({ error: err.message }));
+},
+
     addEvent: (req, res) => {
         let files = req.files.photo;
         const currentFilePath = fileURLToPath(import.meta.url);

@@ -67,7 +67,7 @@ const Register = () => {
         </div>
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
           <Form className="login-form py-6">
-            <div className="row gap-6">
+            <div className="row gap-4">
               <div className="col-6">
                 <div className=" input__group my-5">
                   <label htmlFor="name" className="my-2 block">Name</label>

@@ -1,0 +1,36 @@
+.event-detal li,
+.head {
+
+background: radial-gradient(at center, rgb(255, 186, 108), rgba(255, 201, 15, 1.0)) ;
+}
+
+li {
+    color: #314151;
+}
+
+li svg {
+    color: #314151;
+}
+
+.right .swiper-slide {
+    height: 380px;
+}
+
+.right .swiper-pagination-bullet {
+    height: 15px !important;
+    width: 15px !important;
+    background: rgba(255, 201, 15) !important;
+}
+
+.right .swiper-button-prev::after {
+    color: rgba(255, 201, 15) !important;
+}
+
+.right .swiper-button-next::after {
+    color: rgba(255, 201, 15) !important;
+}
+
+.location_info {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px dashed rgba(255, 201, 15);
+}

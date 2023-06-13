@@ -160,9 +160,7 @@ function Show() {
                                 </div>
                             </div>
                             <div className="flex justify-end absolute bottom-3 w-full px-5 rounded-lg">
-                                <div className="flex items-center p-3 z-20">
-                                    <FaHeart className="text-gray-400 hover:text-red-500 cursor-pointer relative z-10 text-2xl" />
-                                </div>
+                              
                                 <div className="flex items-center p-3 z-20">
                                     <FaShare className="text-gray-400 hover:text-blue-500 cursor-pointer relative z-10 text-2xl" />
                                 </div>

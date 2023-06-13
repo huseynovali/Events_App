@@ -8,13 +8,13 @@ const login = async (req, res) => {
         const user = await userModel.findOne({ email });
 
         if (!user) {
-            return res.status(404).json({ message: "Bu Email tapımlanmadı!" });
+            return res.status(404).json({ message: "Bu Email tapılmadı!" });
         }
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
 
         if (!isPasswordValid) {
-            return res.status(500).json({ message: "Şifre yanlıştır!" });
+            return res.status(500).json({ message: "Şifrə yanlıştır!" });
         } else {
             let token = jwt.sign(req.body.email, process.env.PRIVATE_KEY)
             res.json({ "token": token,"user":user })

@@ -20,7 +20,7 @@ const Login = () => {
 
 
     const validationSchema = Yup.object().shape({
-        email: Yup.string().email("Düzgün bir email adresi girin").required("Email mütləq daxil edilməlidir !"),
+        email: Yup.string().email("Düzgün bir email adresi daxil edin").required("Email mütləq daxil edilməlidir !"),
         password: Yup.string().required("Şifre mütləq daxil edilməlidir ")
     });
 
@@ -73,7 +73,7 @@ const Login = () => {
                                 <ErrorMessage name="email" component="div" className="error-message text-red-400" />
                             </div>
                             <div>
-                                <label htmlFor="password" className="my-2 block">Şifre</label>
+                                <label htmlFor="password" className="my-2 block">Password</label>
                                 <Field type="password" id="password" name="password" className="py-2 rounded-md" />
                                 <ErrorMessage name="password" component="div" className="error-message  text-red-400" />
                             </div>

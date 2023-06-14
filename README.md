@@ -1,7 +1,7 @@
 # Project Name: EvenTix
 On the EvenTix website, users can find available events and information about them. Users will be able to choose the most suitable event according to date, category and location.
 # Presentation about the project: 
-https://1drv.ms/p/s!Aj0zdxx8EDdugjkdTE8awx7V3Zz_
+https://1drv.ms/p/s!Aj0zdxx8EDdugjkeY38EuGLTWgCb?e=afaOpX
 # Technologies used:
 Node.js
 

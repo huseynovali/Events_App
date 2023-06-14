@@ -1,5 +1,13 @@
 # Project Name: EvenTix
 On the EvenTix website, users can find available events and information about them. Users will be able to choose the most suitable event according to date, category and location.
+<img src="https://github.com/huseynovali/Events_App/assets/114071477/87f7b327-1612-4db0-9669-e6c493337215">
+
+<img src="https://github.com/huseynovali/Events_App/assets/114071477/b1179ea7-a68b-45a6-b009-afa124f7a814">
+
+<img src="https://github.com/huseynovali/Events_App/assets/114071477/2ec0d67a-1aaf-459a-b648-cc6488e01d91">
+     
+ 
+ 
 # Presentation about the project: 
 https://1drv.ms/p/s!Aj0zdxx8EDdugjkeY38EuGLTWgCb?e=afaOpX
 # Technologies used:

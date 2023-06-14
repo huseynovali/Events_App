@@ -4,10 +4,15 @@ On the EvenTix website, users can find available events and information about th
 https://1drv.ms/p/s!Aj0zdxx8EDdugjkdTE8awx7V3Zz_
 # Technologies used:
 Node.js
+
 MongoDB
+
 React
+
 Redux Toolkit
+
 Material UI
+
 Tailwind CSS
 
 # Getting Started with Create React App

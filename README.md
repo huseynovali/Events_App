@@ -26,19 +26,24 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 # Prerequisites
 Node.js (version 18.16.0)
+
 MongoDB (version 6.0)
+
 Git (version 2.39.0.windows.1)
 
 # Installation:
 Clone the repository: git clone https://github.com/huseynovali/Events_App.git
+
 Change to the project's root directory: cd Events_App
 
 # Install the dependencies for the server:
 cd server
+
 npm install
 
 # Install the dependencies for the client:
 cd client
+
 npm install
 
 # Configuration:
@@ -46,9 +51,11 @@ MONGODB_URI="your-mongodb-uri"
 
  # Running the Application:
 cd client
+
 npm start
 
 cd server
+
 node index.js
 
   
